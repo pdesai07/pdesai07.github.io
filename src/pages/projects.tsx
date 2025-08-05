@@ -59,7 +59,17 @@ export default function ProjectsPage() {
                       )}
 
                       {/* Text Content */}
-                      <h3 className="text-2xl font-bold mb-3 text-left">📌 {project.title}</h3>
+                      <h3 className="text-2xl font-bold mb-3 text-left">
+                        📌{' '}
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="underline"
+                        >
+                          {project.title}
+                        </a>
+                      </h3>
                       <p className="text-lg text-gray-700 dark:text-gray-300 text-left mb-1">
                         {project.description}
                       </p>

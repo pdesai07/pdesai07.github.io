@@ -7,13 +7,14 @@ const projectData = [
       'This portfolio website showcases Priyansh’s work in AI, Golang, and intelligent systems through a clean, responsive interface built with Next.js and Tailwind CSS. It features scroll-activated project cards, a publications gallery with overlay views, and a dedicated chatbot interface for interactive engagement. A physics-based tennis ball simulation built using Three.js adds a personal touch. With dark mode support, animated transitions, and custom timeline navigation, the site reflects both technical depth and design clarity.',
     image: '/memoji_full_1.png',
     timeline: 'Jan 2025 – Apr 2025',
+    link: 'https://github.com/pdesai07/pdesai07.github.io',
   },
   {
     title: 'My Personal Chatbot',
     description:
       'Priyansh’s personal chatbot is a RAG-based assistant built on top of his Obsidian knowledge base. It uses Groq’s Qwen-32B model and LangChain for prompt orchestration, combining local markdown indexing with ChromaDB for efficient retrieval. The chatbot supports multi-turn memory using a persistent JSON store and runs inside a lightweight FastAPI backend. Hosted in a local Docker container, it continuously syncs new notes for real-time query handling. Designed for self-reflection, project queries, and technical recall, it delivers fast, offline-first answers from personal knowledge.',
     image: '/chatbot_icon.png',
-    timeline: 'Aug 2024 – Jan 2025',
+    timeline: 'Jan 2025 – Apr 2025',
   },
   {
     title: 'Contractly',
@@ -28,6 +29,7 @@ const projectData = [
       'AdaptAI is a multimodal AI system that enhances productivity and well-being by tailoring interventions to individual needs. Unlike generic tools, AdaptAI integrates egocentric vision, audio, physiological signals, and LLM-driven workflows to provide context-aware support. Its Tone-Adaptive Conversational Agent enhances productivity by adjusting responses to be more positive and supportive during stressful moments.',
     image: '/adaptai_image.png',
     timeline: 'Aug 2024 – Jan 2025',
+    link: 'https://github.com/gadhvirushiraj/AdaptAI',
   },
   {
     title: 'KhalasiIO: Detecting Situational Impairments With Reasoning-based Memory Bank',
@@ -49,6 +51,7 @@ const projectData = [
       'Built a Deep Reinforcement Learning–based recommendation system using an Actor-Critic framework to prioritize long-term user engagement. Modeled dynamic user-item interactions and trained the agent on Book-Crossing and MovieLens datasets. Used metrics like Precision@10 and NDCG@10 for offline evaluation. Benchmarked against Collaborative Filtering, KNN, GCN, and SLIM. The DRL model outperformed traditional methods by adapting to evolving user preferences. Tackled challenges like data sparsity and class imbalance through custom preprocessing and training strategies.',
     image: '/DRL_image.png',
     timeline: 'Jan 2024 – Apr 2024',
+    link: 'https://github.com/Nikita-thomas/rl-recommendation-system',
   },
   {
     title: 'PosePilot: Edge-AI Solution for Posture Correction in Physical Exercises',
@@ -56,6 +59,7 @@ const projectData = [
       'PosePilot: provides corrective feedback on yoga poses by using LSTM networks to detect poses and offer posture guidance. It analyzes body key points from videos to predict poses and forecast corrections, ensuring proper technique and posture for practitioners. The system helps overcome challenges like time, cost, and lack of instruction, offering personalized, real-time feedback for improved practice.',
     image: '/posepilot_image.png',
     timeline: 'Aug 2023 – Jan 2024',
+    link: 'https://github.com/gadhvirushiraj/PosePilot',
   },
 ]
 
