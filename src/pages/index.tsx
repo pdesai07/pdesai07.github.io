@@ -30,7 +30,7 @@ export default function Home() {
               Sports have always been an important part of my life. I trained and competed in lawn tennis for many years, and that experience shaped how I approach both research and problem solving—with discipline, patience, and a clear focus under pressure. It continues to influence how I show up in collaborative and technical environments.
             </p>
             <p className="text-gray-700 dark:text-gray-400 text-xl mb-6">
-              I care deeply about ideas and enjoy thinking through them in conversation, especially when reading and discussing research papers in machine learning. Whether it’s reinforcement learning, retrieval-augmented generation, or probabilistic modeling, I’m interested in understanding how systems work and the thinking behind their design.
+              I care deeply about ideas and enjoy thinking through them in conversation, especially when reading and discussing research papers in machine learning. Whether it’s computer vision, retrieval-augmented generation, or probabilistic modeling, I’m interested in understanding how systems work and the thinking behind their design.
             </p>
             <p className="text-gray-700 dark:text-gray-400 text-xl mb-6">
               Outside of work, I’ve put effort into understanding myself better and improving how I communicate. I believe small things like being open in conversation, listening carefully, and showing up with a smile matter in the long run.    
