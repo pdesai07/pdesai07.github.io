@@ -32,47 +32,66 @@ export default function PublicationOverlayCard({ pub }: PublicationOverlayCardPr
 
       {/* Overlay */}
       {open && (
-        <div className="fixed inset-0 bg-black bg-opacity-70 z-50 flex justify-center items-center p-4">
-          <div className="bg-[#f1f0e9] dark:bg-[#18181b] w-full max-w-4xl md:w-[50vw] rounded-2xl p-6 relative text-black dark:text-white max-h-[90vh] overflow-y-auto">
-            {/* Close */}
-            <button
-              onClick={() => setOpen(false)}
-              className="absolute top-0 right-2 text-xl text-gray-400 hover:text-red-400"
-            >
-              ✕
-            </button>
-
-            {/* Image */}
-            <Image
-              src={pub.image ?? '/fallback.jpg'}
-              alt={pub.title}
-              width={500}
-              height={300}
-              className="w-full h-full object-cover rounded-xl mb-6"
-              unoptimized // required for `output: 'export'`
-            />
-
-            {/* Text */}
-            <h2 className="text-5xl mb-2">{pub.title}</h2>
-            <p className="text-xl text-gray-500 mb-4">{pub.authors}</p>
-            <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed">{pub.abstract}</p>
-
-            {/* Paper Link */}
-            {pub.link && (
-              <a
-                href={pub.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="absolute bottom-2 right-4 text-blue-500 hover:underline flex items-center gap-1"
+        <div
+          className="fixed inset-0 bg-black bg-opacity-70 z-50 flex justify-center items-center p-4"
+          onClick={() => setOpen(false)} // 👈 closes on background click
+        >
+          <div
+            className="bg-[#f1f0e9] dark:bg-[#18181b] w-full max-w-4xl md:w-[50vw] rounded-2xl p-6 relative text-black dark:text-white max-h-[90vh] overflow-y-auto"
+            onClick={(e) => e.stopPropagation()} // 👈 prevent closing when clicking inside the card
+          >
+            <div className="bg-[#f1f0e9] dark:bg-[#18181b] w-full max-w-4xl md:w-[50vw] rounded-2xl p-6 relative text-black dark:text-white max-h-[90vh] overflow-y-auto">
+              {/* Close */}
+              <button
+                onClick={() => setOpen(false)}
+                className="absolute top-0 right-2 text-xl text-gray-400 hover:text-red-400"
               >
-                <span>View Paper</span>
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 3h7m0 0v7m0-7L10 14" />
-                </svg>
-              </a>
-            )}
-          </div>
+                ✕
+              </button>
+
+              {/* Image */}
+              <Image
+                src={pub.image ?? '/fallback.jpg'}
+                alt={pub.title}
+                width={500}
+                height={300}
+                className="w-full h-full object-cover rounded-xl mb-6"
+                unoptimized // required for `output: 'export'`
+              />
+
+              {/* Text */}
+              {pub.link ? (
+                <a
+                  href={pub.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-5xl mb-2 text-blue-500 hover:underline block"
+                >
+                  {pub.title}
+                </a>
+              ) : (
+                <h2 className="text-5xl mb-2">{pub.title}</h2>
+              )}
+              <p className="text-xl text-gray-500 mb-4">{pub.authors}</p>
+              <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed">{pub.abstract}</p>
+
+              {/* Paper Link */}
+              {pub.link && (
+                <a
+                  href={pub.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute bottom-2 right-4 text-blue-500 hover:underline flex items-center gap-1"
+                >
+                  <span>View Paper</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 3h7m0 0v7m0-7L10 14" />
+                  </svg>
+                </a>
+              )}
+            </div>
         </div>
+        </div>      
       )}
     </>
   )
