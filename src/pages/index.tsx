@@ -51,7 +51,7 @@ export default function Home() {
           {/* Right: Image */}
           <div className="w-full md:w-[35%] flex justify-center md:justify-end mt-4 md:mt-16">
             <Image
-              src="/my_photo_4.jpg"
+              src="/my_photo_4.JPG"
               alt="Priyansh Desai"
               width={400}
               height={500}
