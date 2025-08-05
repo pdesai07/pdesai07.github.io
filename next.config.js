@@ -1,8 +1,11 @@
 /** @type {import('next').NextConfig} */
+const isProd = process.env.NODE_ENV === 'production'
+
 const nextConfig = {
   output: 'export',
+  basePath: isProd ? '/pdesai07.github.io' : '',
+  assetPrefix: isProd ? '/pdesai07.github.io/' : '',
   trailingSlash: true,
-  basePath: process.env.NODE_ENV === 'production' ? '/pdesai07.github.io' : '',
   images: {
     unoptimized: true,
   },
