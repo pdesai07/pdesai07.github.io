@@ -4,18 +4,18 @@ const projectData = [
   {
     title: 'Portfolio Website',
     description:
-      'This portfolio website showcases Priyansh’s work in AI, Golang, and intelligent systems through a clean, responsive interface built with Next.js and Tailwind CSS. It features scroll-activated project cards, a publications gallery with overlay views, and a dedicated chatbot interface for interactive engagement. A physics-based tennis ball simulation built using Three.js adds a personal touch. With dark mode support, animated transitions, and custom timeline navigation, the site reflects both technical depth and design clarity.',
+      'Built using Next.js and Tailwind CSS, this portfolio website showcases projects in AI and intelligent systems through a clean, responsive design. It features scroll-activated project cards, a publications gallery with overlay modals, and a custom chatbot interface powered by a RAG pipeline. The site supports dark mode, includes smooth animated transitions, and uses a custom timeline-based navigation to offer an engaging and intuitive browsing experience.',
     image: '/memoji_full_1.png',
     timeline: 'Jan 2025 – Apr 2025',
     link: 'https://github.com/pdesai07/pdesai07.github.io',
   },
-  {
-    title: 'My Personal Chatbot',
-    description:
-      'Priyansh’s personal chatbot is a RAG-based assistant built on top of his Obsidian knowledge base. It uses Groq’s Qwen-32B model and LangChain for prompt orchestration, combining local markdown indexing with ChromaDB for efficient retrieval. The chatbot supports multi-turn memory using a persistent JSON store and runs inside a lightweight FastAPI backend. Hosted in a local Docker container, it continuously syncs new notes for real-time query handling. Designed for self-reflection, project queries, and technical recall, it delivers fast, offline-first answers from personal knowledge.',
-    image: '/chatbot_icon.png',
-    timeline: 'Jan 2025 – Apr 2025',
-  },
+  // {
+  //   title: 'My Personal Chatbot',
+  //   description:
+  //     'My personal chatbot is a RAG-based assistant built on top of my Obsidian knowledge base. It uses Groq’s Qwen-32B model along with LangChain for prompt orchestration, combining local markdown indexing with ChromaDB for efficient retrieval. The chatbot supports multi-turn memory through a persistent JSON store and runs inside a lightweight FastAPI backend. Hosted in a local Docker container, it automatically syncs newly created notes for real-time query handling. It’s designed to help with self-reflection, project queries, and technical recall, delivering fast, offline-first answers from my own knowledge.',
+  //   image: '/chatbot_icon.png',
+  //   timeline: 'Jan 2025 – Apr 2025',
+  // },
   {
     title: 'Contractly',
     description:
