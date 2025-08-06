@@ -36,11 +36,11 @@ export default function PublicationOverlayCard({ pub }: PublicationOverlayCardPr
           className="fixed inset-0 bg-black bg-opacity-70 z-50 flex justify-center items-center p-4"
           onClick={() => setOpen(false)} // 👈 closes on background click
         >
-            <div
+          <div
               className="bg-[#f1f0e9] dark:bg-[#18181b] w-full max-w-4xl md:w-[50vw] rounded-2xl p-6 relative text-black dark:text-white max-h-[90vh] overflow-y-auto"
               onClick={(e) => e.stopPropagation()}
             >
-              {/* Close */}
+
               <button
                 onClick={() => setOpen(false)}
                 className="absolute top-0 right-2 text-xl text-gray-400 hover:text-red-400"
@@ -59,18 +59,30 @@ export default function PublicationOverlayCard({ pub }: PublicationOverlayCardPr
               />
 
               {/* Text */}
-              {pub.link ? (
+              <h2 className="text-4xl mb-2">
+                {' '}
                 <a
                   href={pub.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-5xl mb-2 underline block"
+                  className="underline block"
+                >
+                  {pub.title}
+                </a>
+              </h2>
+
+              {/* {pub.link ? (
+                <a
+                  href={pub.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-5xl mb-2 text-blue-500 hover:underline block"
                 >
                   {pub.title}
                 </a>
               ) : (
                 <h2 className="text-5xl mb-2">{pub.title}</h2>
-              )}
+              )} */}
               <p className="text-xl text-gray-500 mb-4">{pub.authors}</p>
               <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed">{pub.abstract}</p>
               
