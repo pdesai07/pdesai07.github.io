@@ -21,9 +21,14 @@ export default function Publications() {
 
   return (
     <Layout>
-      <div className="text-black dark:text-white py-14 px-6 md:px-20 w-full">
-        <h1 className="text-5xl font mb-14 text-left">My Publications</h1>
-        <div className="flex flex-col gap-8 max-w-8xl mx-auto">
+      <div className="text-black dark:text-white py-1 px-1 sm:px-1 md:px-1 w-full">
+        {/* Responsive Title */}
+        <h1 className="text-3xl sm:text-4xl md:text-5xl mb-10 text-left">
+          My Publications
+        </h1>
+
+        {/* Responsive Grid */}
+        <div className="flex flex-col gap-8 max-w-9xl mx-auto w-full">
           {publications.map((pub, i) => (
             <PublicationOverlayCard pub={pub} key={i} />
           ))}

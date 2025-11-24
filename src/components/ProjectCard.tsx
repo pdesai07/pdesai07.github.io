@@ -26,7 +26,7 @@ export default function ProjectCard({
       className="bg-white dark:bg-[#18181b] text-black dark:text-white border border-[#dcdad2] dark:border-[#2e2e32] rounded-2xl flex flex-col md:flex-row overflow-hidden shadow-xl hover:scale-[1.01] transition transform duration-200 cursor-pointer"
       onClick={onClick}
     >
-      <div className="md:w-1/3 h-[200px] md:h-auto relative">
+      <div className="md:w-1/2 h-[200px] md:h-auto sm:h-auto relative">
         {image && (
           <Image
             src={image}
@@ -37,11 +37,11 @@ export default function ProjectCard({
         )}
       </div>
 
-      <div className="md:w-2/3 p-6 flex flex-col justify-between">
+      <div className="md:w-1/2 p-6 flex flex-col justify-between">
         <div>
           {subtitle && <p className="text-sm opacity-80 mb-1">{subtitle}</p>}
           <h2 className="text-xl font-semibold mb-2">{title}</h2>
-          <p className="text-sm text-gray-600 dark:text-gray-400">{trimmedDesc}</p>
+          {/* <p className="text-sm text-gray-600 dark:text-gray-400">{trimmedDesc}</p> */}
         </div>
 
         {timeline && (

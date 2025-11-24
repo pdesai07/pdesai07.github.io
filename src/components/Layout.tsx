@@ -17,9 +17,10 @@ export default function Layout({ children }: { children: ReactNode }) {
           className="
             w-full
             p-6
-            lg:ml-72             
+            lg:ml-72    
+               
             pt-24 lg:pt-10       
-            max-w-4xl mx-auto   
+            max-w-8xl mx-auto   
           "
         >
           {children}

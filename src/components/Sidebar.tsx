@@ -36,7 +36,14 @@ export default function Sidebar() {
         />
 
         {/* Center Navigation */}
-        <nav className="flex gap-2 sm:gap-4 text-xs sm:text-sm font-medium">
+        <nav
+          className="
+            flex flex-wrap justify-center
+            gap-2 sm:gap-4 text-xs sm:text-sm font-medium
+            min-h-[60px]   /* ensures space for 2 rows */
+            gap-y-2        /* vertical spacing when wrapped */
+          "
+        >
           <Link href="/" className="flex items-center gap-1 sm:gap-2 hover:text-green-600 dark:hover:text-green-400 transition">
             <AiOutlineHome className="text-lg sm:text-xl" /> Home
           </Link>
