@@ -12,8 +12,20 @@ export default function Layout({ children }: { children: ReactNode }) {
 
       <div className="flex min-h-screen bg-[#efeee7] dark:bg-[#0e0e10] text-black dark:text-white">
         <Sidebar />
-        <main className="ml-72 w-full p-6">{children}</main>
+
+        <main
+          className="
+            w-full
+            p-6
+            lg:ml-72             
+            pt-24 lg:pt-10       
+            max-w-4xl mx-auto   
+          "
+        >
+          {children}
+        </main>
       </div>
     </>
   )
 }
+

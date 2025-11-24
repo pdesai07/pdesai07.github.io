@@ -1,3 +1,5 @@
+'use client'
+import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import {
@@ -12,74 +14,114 @@ import { FiInstagram, FiGithub, FiLinkedin } from 'react-icons/fi'
 import { useTheme } from '@/hooks/useTheme'
 
 export default function Sidebar() {
-    const { theme, toggleTheme } = useTheme()
-  return (
-    <aside id="sidebar" className="fixed left-4 top-4 h-[calc(100vh-2rem)] w-64 bg-[#efeee7] dark:bg-[#18181b] text-black dark:text-white flex flex-col justify-between py-8 px-6 border border-[#dcdad2] dark:border-[#2c2c32] rounded-2xl shadow-xl">
-      {/* Top Section */}
-      <div>
-        {/* Small Icon + Name */}
-        <div className="flex items-center gap-3 mb-10">
-          <Image src="/my_photo_1.jpeg" alt="Profile" width={48} height={48} className="rounded-full" />
-          <h2 className="text-lg font-semibold">Priyansh</h2>
-        </div>
+  const { theme, toggleTheme } = useTheme()
 
-        {/* Navigation */}
-        <nav className="space-y-6 text-[20px]">
-          <Link href="/" className="flex items-center gap-3 hover:text-green-600 transition">
-            <AiOutlineHome size={20} /> Home
+  return (
+    <>
+      <div
+        className="
+          lg:hidden fixed top-4 left-1/2 -translate-x-1/2 w-[96%] 
+          bg-[#efeee7]/90 dark:bg-[#18181b]/90 
+          text-black dark:text-white 
+          flex items-center justify-between px-4 py-2 
+          rounded-full shadow-lg border border-gray-300 dark:border-gray-700 
+          backdrop-blur-md z-50
+        "
+      >
+        {/* Left Icon */}
+        <Image
+          src="/my_photo_1.jpeg"
+          alt="Profile"
+          width={32} height={32}
+          className="rounded-full sm:w-10 sm:h-10"
+        />
+
+        {/* Center Navigation */}
+        <nav className="flex gap-2 sm:gap-4 text-xs sm:text-sm font-medium">
+          <Link href="/" className="flex items-center gap-1 sm:gap-2 hover:text-green-600 dark:hover:text-green-400 transition">
+            <AiOutlineHome className="text-lg sm:text-xl" /> Home
           </Link>
-          <Link href="/projects" className="flex items-center gap-3 hover:text-green-600 transition">
-            <AiOutlineProject size={20} /> My Projects
+          <Link href="/projects" className="flex items-center gap-1 sm:gap-2 hover:text-green-600 dark:hover:text-green-400 transition">
+            <AiOutlineProject className="text-lg sm:text-xl" /> Projects
           </Link>
-          <Link href="/publications" className="flex items-center gap-3 hover:text-green-600 transition">
-            <AiOutlineBook size={20} /> My Publications
+          <Link href="/publications" className="flex items-center gap-1 sm:gap-2 hover:text-green-600 dark:hover:text-green-400 transition">
+            <AiOutlineBook className="text-lg sm:text-xl" /> Publications
           </Link>
-          <Link href="/agent" className="flex items-center gap-3 hover:text-green-600 transition">
-            <AiOutlineRobot size={20} /> My AI Agent
+          <Link href="/agent" className="flex items-center gap-1 sm:gap-2 hover:text-green-600 dark:hover:text-green-400 transition">
+            <AiOutlineRobot className="text-lg sm:text-xl" /> AI Agent
           </Link>
-          {/* <Link href="/project_2" className="flex items-center gap-3 hover:text-green-600 transition">
-            <AiOutlineProject size={20} /> My Projects 2
-          </Link> */}
           <a
             href="/resume.pdf"
             target="_blank"
             rel="noreferrer"
-            className="flex items-center gap-3 hover:text-green-600 transition"
+            className="flex items-center gap-1 sm:gap-2 hover:text-green-600 dark:hover:text-green-400 transition"
           >
-            <AiOutlineFilePdf size={20} /> Resume
+            <AiOutlineFilePdf className="text-lg sm:text-xl" /> Resume
           </a>
         </nav>
+
+        {/* Right Section - SOCIAL ICONS */}
+        <div className="flex items-center gap-2 sm:gap-3 text-gray-600 dark:text-gray-300">
+          <FiGithub className="text-xl sm:text-2xl hover:text-green-600 dark:hover:text-green-400 transition" />
+          <FiLinkedin className="text-xl sm:text-2xl hover:text-green-600 dark:hover:text-green-400 transition" />
+          <a href="mailto:priyanshdesai03@gmail.com">
+            <AiOutlineMail className="text-xl sm:text-2xl hover:text-green-600 dark:hover:text-green-400 transition" />
+          </a>
+          <FiInstagram className="text-xl sm:text-2xl hover:text-green-600 dark:hover:text-green-400 transition" />
+
+          {/* Theme Toggle */}
+          <button onClick={toggleTheme} className="text-lg sm:text-xl hover:scale-110 transition-transform">
+            {theme === 'dark' ? '🌙' : '🌞'}
+          </button>
+        </div>
       </div>
 
-      {/* Bottom Section */}
-      <div className="space-y-4">
-        {/* Socials */}
-        <div className="flex justify-center gap-4 text-gray-500 dark:text-gray-400">
-          <a href="https://github.com/pdesai07" target="_blank" rel="noreferrer"><FiGithub size={30} /></a>
-          <a href="https://www.linkedin.com/in/priyansh-desai-6bb470230/" target="_blank" rel="noreferrer"><FiLinkedin size={30} /></a>
-          <a href="priyanshdesai03@gmail.com" rel="noreferrer"><AiOutlineMail size={30} /></a>
-          <a href="https://www.instagram.com/priyanshh.7/" target="_blank" rel="noreferrer"><FiInstagram size={30} /></a>
-          <button
-                onClick={toggleTheme}
-                className="px-2 py-1 text-sm rounded-full bg-gray-200 dark:bg-[#2c2c32] text-black dark:text-white hover:opacity-80 transition"
-            >
-                {theme === 'dark' ? '🌙' : '🌞'}
-            </button>
+      <aside
+        id="sidebar"
+        className="
+          hidden lg:flex 
+          fixed left-4 top-4 h-[calc(100vh-2rem)] w-64 bg-[#efeee7] dark:bg-[#18181b]
+          text-black dark:text-white flex-col justify-between py-8 px-6 border border-[#dcdad2] 
+          dark:border-[#2c2c32] rounded-2xl shadow-xl
+        "
+      >
+        <div>
+          <div className="flex items-center gap-3 mb-10">
+            <Image src="/my_photo_1.jpeg" alt="Profile" width={48} height={48} className="rounded-full" />
+            <h2 className="text-lg font-semibold">Priyansh</h2>
+          </div>
+
+          <nav className="space-y-6 text-[20px]">
+            <Link href="/" className="flex items-center gap-3 hover:text-green-600 transition">
+              <AiOutlineHome /> Home
+            </Link>
+            <Link href="/projects" className="flex items-center gap-3 hover:text-green-600 transition">
+              <AiOutlineProject /> My Projects
+            </Link>
+            <Link href="/publications" className="flex items-center gap-3 hover:text-green-600 transition">
+              <AiOutlineBook /> My Publications
+            </Link>
+            <Link href="/agent" className="flex items-center gap-3 hover:text-green-600 transition">
+              <AiOutlineRobot /> My AI Agent
+            </Link>
+            <a href="/resume.pdf" target="_blank" rel="noreferrer" className="flex items-center gap-3 hover:text-green-600 transition">
+              <AiOutlineFilePdf /> Resume
+            </a>
+          </nav>
         </div>
 
+        <div className="space-y-4">
+          <div className="flex justify-center gap-4">
+            <FiGithub size={30} />
+            <FiLinkedin size={30} />
+            <AiOutlineMail size={30} />
+            <FiInstagram size={30} />
+            <button onClick={toggleTheme}>{theme === 'dark' ? '🌙' : '🌞'}</button>
+          </div>
 
-        {/* Coordinates */}
-        <p className="text-xs text-center text-gray-600 dark:text-gray-400">21.1731558, 72.8058916</p>
-      </div>
-      {/* Theme Toggle Button */}
-        {/* <div className="flex justify-center my-4">
-            <button
-                onClick={toggleTheme}
-                className="px-3 py-1 text-sm rounded-full bg-gray-200 dark:bg-[#2c2c32] text-black dark:text-white hover:opacity-80 transition"
-            >
-                {theme === 'dark' ? '🌙 Dark' : '🌞 Light'}
-            </button>
-        </div> */}
-    </aside>
+          <p className="text-xs text-center">21.1731558, 72.8058916</p>
+        </div>
+      </aside>
+    </>
   )
 }
